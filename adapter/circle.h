@@ -1,25 +1,32 @@
 #ifndef CIRCLE_H
 #define CIRCLE_H
-#include "figure.h"
-#include "points.h"
-#include <QColor>
-#include <QPainter>
-#include <QPixmap>
-#include <QPen>
-class circle : public figure,public points
+#include <iostream>
+#include <cmath>
+#include "shape.h"
+#include "point.h"
+#include "factorycir.h"
+using namespace std;
+class circle
 {
 private:
-  int radio;
-  points *centro;
+    factorycir *fac;
+    double const pi=3.1416;
+    point* puntos;
 
 public:
-  circle(const string _color, points *_centro, const int _radio = 0) : figure(_color), radio(_radio)
-  {
-      centro=_centro;
-  }
-  ~circle();
-  void draw(QPainter * painter){
-      painter->drawEllipse(centro->get_x(),centro->get_x(),10,10);
-  }
+
+    circle(int radio=0);
+    virtual ~circle();
+    void draw();
+    float area();
+    int perimetro();
+    point *getpoints();
+    void setpoints(int x, int y);
+    void set_radio(int _radio);
+    int get_radio();
+    void set_color(string _color);
+    string get_color();
+
 };
-#endif //CIRCLE_H
+
+#endif // CIRCLE_H

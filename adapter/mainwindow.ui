@@ -6,70 +6,169 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>906</width>
-    <height>433</height>
+    <width>536</width>
+    <height>345</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <widget class="QLabel" name="label_draw_area">
+   <widget class="QLabel" name="base">
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>0</y>
-      <width>600</width>
-      <height>400</height>
+      <y>10</y>
+      <width>381</width>
+      <height>281</height>
      </rect>
     </property>
     <property name="text">
-     <string>label (drawing area)</string>
+     <string/>
     </property>
    </widget>
-   <widget class="QPushButton" name="b_draw_circle">
+   <widget class="QComboBox" name="cuadradito">
     <property name="geometry">
      <rect>
-      <x>680</x>
-      <y>270</y>
-      <width>161</width>
-      <height>25</height>
+      <x>410</x>
+      <y>40</y>
+      <width>121</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <item>
+     <property name="text">
+      <string>none</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Cuadrado</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Circulo</string>
+     </property>
+    </item>
+   </widget>
+   <widget class="QLineEdit" name="lado">
+    <property name="geometry">
+     <rect>
+      <x>410</x>
+      <y>100</y>
+      <width>121</width>
+      <height>20</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="radio">
+    <property name="geometry">
+     <rect>
+      <x>410</x>
+      <y>200</y>
+      <width>121</width>
+      <height>20</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="colores">
+    <property name="geometry">
+     <rect>
+      <x>410</x>
+      <y>250</y>
+      <width>121</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <item>
+     <property name="text">
+      <string>black</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>red</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>green</string>
+     </property>
+    </item>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>410</x>
+      <y>230</y>
+      <width>46</width>
+      <height>13</height>
      </rect>
     </property>
     <property name="text">
-     <string>Draw Circle</string>
+     <string>Color</string>
     </property>
    </widget>
-   <widget class="QComboBox" name="comboBox">
+   <widget class="QLabel" name="label_2">
     <property name="geometry">
      <rect>
-      <x>700</x>
+      <x>410</x>
+      <y>180</y>
+      <width>46</width>
+      <height>13</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Radio</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_3">
+    <property name="geometry">
+     <rect>
+      <x>410</x>
       <y>80</y>
-      <width>131</width>
-      <height>31</height>
+      <width>46</width>
+      <height>13</height>
      </rect>
     </property>
-    <item>
-     <property name="text">
-      <string>nada</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>circle</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>square</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>triangle</string>
-     </property>
-    </item>
+    <property name="text">
+     <string>Lado</string>
+    </property>
    </widget>
+   <widget class="QLabel" name="label_4">
+    <property name="geometry">
+     <rect>
+      <x>410</x>
+      <y>130</y>
+      <width>31</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>base</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="bases">
+    <property name="geometry">
+     <rect>
+      <x>410</x>
+      <y>150</y>
+      <width>121</width>
+      <height>20</height>
+     </rect>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>536</width>
+     <height>21</height>
+    </rect>
+   </property>
   </widget>
   <widget class="QToolBar" name="mainToolBar">
    <attribute name="toolBarArea">

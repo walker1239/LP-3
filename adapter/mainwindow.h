@@ -1,17 +1,10 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
+#include "adaptercir.h"
+#include "adapterrec.h"
 #include <QMainWindow>
-#include <QColor>
-#include <QPainter>
-#include <QPixmap>
-#include <QPen>
-#include <QMainWindow>
-#include "circle.h"
-#include "figure.h"
-#include "points.h"
-#include "square.h"
-
-
+#include <QMouseEvent>
+#include <vector>
 namespace Ui {
 class MainWindow;
 }
@@ -21,29 +14,39 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 
 public:
-    explicit MainWindow(QWidget *parent = nullptr);
+    explicit MainWindow(QWidget *parent = NULL);
     ~MainWindow();
-
+    void mousePressEvent(QMouseEvent *event);
+    void refresh();
 private slots:
-    void on_b_draw_circle_clicked();
+    void on_cuadradito_currentIndexChanged(int index);
 
-    void on_comboBox_currentIndexChanged(int index);
+    void on_lado_editingFinished();
 
-private:
-    void draw_circle(QPainter * painter);
+    void on_radio_editingFinished();
+
+
+    void on_bases_editingFinished();
+
+    void on_colores_currentIndexChanged(int index);
 
 private:
     Ui::MainWindow *ui;
-
-    // draw objects
-    QPainter * painter;
-    QPixmap * pixmap;
-    QPen * pen;
-    figure * figures;
-    circle * circle;
-    square * square;
+    vector<adapterrec*>adaprect;
+    vector<rectangulo*>vecrect;
+    vector<circle*>cir;
+    vector<adaptercir*>adapcir;
+    QPixmap *pixmap;
+    QPixmap *circulo;
+    QPen *lapiz;
+    QPen *lapizcirculo;
+    QPainter *circulitos;
+    QPainter *q;
+    QColor color;
+    QColor colorcir;
+    bool c;
+    int altura,base,radio;
 
 };
-
 
 #endif // MAINWINDOW_H
