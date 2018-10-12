@@ -8,12 +8,10 @@ protected:
     int s;
 public:
     digital(int hor, int min, int se){
-        h=hor;
-        m=min;
-        s=se;
+        impl=new digital_impl(hor,min,se);
     }
     void dalahora() {
-        cout<<h<<":"<<m<<":"<<s<<endl;
+        impl->da_lahora();
     }
 
 };

@@ -1,1 +1,1 @@
-#include "relojtiempo.h"
+#include "reloj.h"

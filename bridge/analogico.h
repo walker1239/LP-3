@@ -5,12 +5,11 @@
 class analogico:public reloj
 {
 public:
-    analogico(int hor, int min, int se){
-        h=hor;
-        m=min;
+    analogico(int hor, int min, bool pm){
+        impl=new analogica_impl(hor,min,pm);
     }
     void dalahora() {
-        cout<<h<<":"<<m<<endl;
+        impl->da_lahora();
     }
 };
 

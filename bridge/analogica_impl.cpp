@@ -1,8 +1,10 @@
 #include "analogica_impl.h"
 
-analogica_impl::analogica_impl(int hora, int min)
+analogica_impl::analogica_impl(int hor, int min,bool _pm):reloj_implementor(hor,min)
 {
-    h=hor;
-    m=min;
-    new analogica_impl(hor,min);
+    pm=_pm;
 }
+void analogica_impl::da_lahora(){
+    cout<<ho<<":"<<mi<<":"<<pm<<endl;
+}
+

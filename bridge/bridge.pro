@@ -24,10 +24,40 @@ CONFIG += c++11
 
 SOURCES += \
         main.cpp \
-        mainwindow.cpp
+        mainwindow.cpp \
+    analogica_impl.cpp \
+    analogico.cpp \
+    digital.cpp \
+    digital_impl.cpp \
+    main.cpp \
+    mainwindow.cpp \
+    reloj.cpp \
+    reloj_implementor.cpp \
+    analogica_impl.cpp \
+    analogico.cpp \
+    digital.cpp \
+    digital_impl.cpp \
+    main.cpp \
+    mainwindow.cpp \
+    reloj.cpp \
+    reloj_implementor.cpp
 
 HEADERS += \
-        mainwindow.h
+        mainwindow.h \
+    analogica_impl.h \
+    analogico.h \
+    digital.h \
+    digital_impl.h \
+    mainwindow.h \
+    reloj.h \
+    reloj_implementor.h \
+    analogica_impl.h \
+    analogico.h \
+    digital.h \
+    digital_impl.h \
+    mainwindow.h \
+    reloj.h \
+    reloj_implementor.h
 
 FORMS += \
         mainwindow.ui
