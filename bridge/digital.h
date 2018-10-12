@@ -4,7 +4,7 @@
 
 class digital: public reloj
 {
-private:
+protected:
     int s;
 public:
     digital(int hor, int min, int se){

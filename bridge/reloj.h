@@ -8,7 +8,7 @@ class reloj
 protected:
     int h,m;
 public:
-    virtual void dalahora();
+    virtual void dalahora()=0;
 };
 
 #endif // RELOJTIEMPO_H
