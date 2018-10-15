@@ -11,7 +11,7 @@ class reloj
 protected:
     reloj_implementor* impl;
 public:
-    virtual void dalahora()=0;
+    virtual void dalahora(QPainter * painter)=0;
 };
 
 #endif // RELOJTIEMPO_H

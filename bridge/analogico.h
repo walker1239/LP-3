@@ -8,8 +8,15 @@ public:
     analogico(int hor, int min, bool pm){
         impl=new analogica_impl(hor,min,pm);
     }
-    void dalahora() {
-        impl->da_lahora();
+    void dalahora(QPainter * painter) {
+        impl->da_lahora(painter);
+    }
+    void set_hora(int _hora){
+        impl->set_hora(_hora);
+    }
+
+    int get_hora(){
+        impl->get_hora();
     }
 };
 

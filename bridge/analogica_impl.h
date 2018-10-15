@@ -5,7 +5,10 @@ class analogica_impl:public reloj_implementor
 {
 public:
     analogica_impl(int hor, int min,bool pm);
-    void da_lahora();
+    void da_lahora(QPainter * painter);
+    void set_hora(int _hora);
+
+    int get_hora();
 protected:
     bool pm;
 };

@@ -6,7 +6,7 @@ digital_impl::digital_impl(int hora, int min, int seg):reloj_implementor(hora,mi
     mi=min;
     s=seg;
 }
-void digital_impl::da_lahora(){
+void digital_impl::da_lahora(QPainter * painter){
     cout<<ho<<":"<<mi<<":"<<s<<endl;
 }
 
