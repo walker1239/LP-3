@@ -6,6 +6,12 @@ class digital_impl:public reloj_implementor
 public:
     digital_impl(int hor, int min, int seg);
     void da_lahora(QPainter * painter);
+    void set_hora(int h){
+        ho=h;
+    }
+    void set_min(int min){
+        mi=min;
+    }
 protected:
     int s;
 };

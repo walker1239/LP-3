@@ -13,14 +13,13 @@ public:
     void dalahora(QPainter * painter) {
         impl->da_lahora(painter);
     }
-
-    void set_hora(int _hora){
-        impl->set_hora(_hora);
+    void set_hora(int h){
+        impl->set_hora(h);
+    }
+    void set_min(int m){
+        impl->set_min(m);
     }
 
-    int get_hora(){
-        return impl->get_hora();
-    }
 };
 
 #endif // DIGITAL_H

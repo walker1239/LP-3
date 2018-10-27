@@ -1,22 +1,21 @@
 #ifndef ANALOGICO_H
 #define ANALOGICO_H
 #include "reloj.h"
-
+#include <QPainter>
 class analogico:public reloj
 {
 public:
-    analogico(int hor, int min, bool pm){
-        impl=new analogica_impl(hor,min,pm);
+    analogico(int hor=12, int min=60, bool pm=1,int h=480, int w=680){
+        impl=new analogica_impl(hor,min,pm,h,w);
     }
     void dalahora(QPainter * painter) {
         impl->da_lahora(painter);
     }
-    void set_hora(int _hora){
-        impl->set_hora(_hora);
+    void set_hora(int h){
+        impl->set_hora(h);
     }
-
-    int get_hora(){
-        impl->get_hora();
+    void set_min(int m){
+        impl->set_min(m);
     }
 };
 
