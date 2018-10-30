@@ -17,6 +17,7 @@ public:
     void set_min(int m){
         impl->set_min(m);
     }
+    void set_seg(int seg){}
 };
 
 #endif // ANALOGICO_H

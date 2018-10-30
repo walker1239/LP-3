@@ -7,7 +7,7 @@ class digital: public reloj
 protected:
     int s;
 public:
-    digital(int hor, int min, int se){
+    digital(int hor=12, int min=60, int se=30){
         impl=new digital_impl(hor,min,se);
     }
     void dalahora(QPainter * painter) {
@@ -18,6 +18,9 @@ public:
     }
     void set_min(int m){
         impl->set_min(m);
+    }
+    void set_seg(int s){
+        impl->set_seg(s);
     }
 
 };

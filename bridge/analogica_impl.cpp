@@ -23,14 +23,12 @@ void analogica_impl::da_lahora(QPainter * painter){
     QColor minuteColor(0, 127, 127, 191);
 
     int side = qMin(width, height);
-
+    cout<<side<<endl;
     painter->setRenderHint(QPainter::Antialiasing);
-    painter->translate(width / 2, height / 2);
-    painter->scale(side / 200.0, side / 200.0);
     painter->setPen(Qt::NoPen);
     painter->setBrush(hourColor);
     painter->save();
-    painter->rotate(30.0 * ((ho + 10 / 60.0)));//6 hora
+    painter->rotate(30.0 * ((ho + 1 / 60.0)));//6 hora
     painter->drawConvexPolygon(hourHand, 3);
     painter->restore();
     painter->setPen(hourColor);
@@ -42,7 +40,7 @@ void analogica_impl::da_lahora(QPainter * painter){
     painter->setBrush(minuteColor);
 
     painter->save();
-    painter->rotate(6.0 * (mi + 50 / 60.0));//10 minutos
+    painter->rotate(6.0 * (mi + 1 / 60.0));//10 minutos
     painter->drawConvexPolygon(minuteHand, 3);
     painter->restore();
     painter->setPen(minuteColor);
@@ -51,7 +49,7 @@ void analogica_impl::da_lahora(QPainter * painter){
             painter->drawLine(92, 0, 96, 0);
         painter->rotate(6.0);
     }
-
+    painter->restore();
 
 }
 

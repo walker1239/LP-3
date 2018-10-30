@@ -10,6 +10,7 @@ public:
     virtual void da_lahora(QPainter * painter);
     virtual void set_hora(int h)=0;
     virtual void set_min(int min)=0;
+    virtual void set_seg(int min)=0;
 protected:
     int ho,mi;
 };

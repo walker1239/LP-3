@@ -13,6 +13,7 @@ public:
     void set_min(int min){
         mi=min;
     }
+    void set_seg(int seg){}
 protected:
     bool pm;
     int width;

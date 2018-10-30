@@ -50,8 +50,8 @@
    <widget class="QPushButton" name="drawn">
     <property name="geometry">
      <rect>
-      <x>920</x>
-      <y>310</y>
+      <x>910</x>
+      <y>360</y>
       <width>75</width>
       <height>23</height>
      </rect>
@@ -84,6 +84,29 @@
     </property>
     <property name="text">
      <string>Hora</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_3">
+    <property name="geometry">
+     <rect>
+      <x>900</x>
+      <y>290</y>
+      <width>47</width>
+      <height>13</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Segundo</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="segundo">
+    <property name="geometry">
+     <rect>
+      <x>890</x>
+      <y>310</y>
+      <width>113</width>
+      <height>20</height>
+     </rect>
     </property>
    </widget>
   </widget>

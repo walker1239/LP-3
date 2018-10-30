@@ -12,6 +12,9 @@ public:
     void set_min(int min){
         mi=min;
     }
+    void set_seg(int seg){
+        s=seg;
+    }
 protected:
     int s;
 };

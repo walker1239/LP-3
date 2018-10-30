@@ -31,14 +31,15 @@ private slots:
 
     void on_drawn_pressed();
 
+    void on_segundo_editingFinished();
+
 private:
     Ui::MainWindow *ui;
     QPainter *q;
     QPixmap *pixmap;
     QPen *lapiz;
     analogico *ana;
-    int hora;
-    int minu;
+    digital *digi;
 };
 
 #endif // MAINWINDOW_H
