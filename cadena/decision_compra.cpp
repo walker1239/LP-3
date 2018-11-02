@@ -1,29 +1,17 @@
-#ifndef DECISION_COMPRA_H
-#define DECISION_COMPRA_H
-#include "producto.cpp"
-class decision_compra
+#include "decision_compra.h"
+decision_compra::decision_compra(){
+    next=NULL;
+}
+void decision_compra::Compra(producto *p){
+    next->Compra(p);
+}
+
+void decision_compra::Next(decision_compra *n)
 {
-private:
-	decision_compra *next;
-
-public:
-
-    decision_compra(){
-    	next=NULL;
+    if (next!=NULL){
+      next->Next(n);
+    }else{
+      next = n;
     }
-    virtual void Compra(producto *p){
-    	next->Compra(p);
-    }
-
-    void Next(decision_compra *n)
-    {
-        if (next!=NULL){
-          next->Next(n);
-        }else{
-          next = n;
-        }
-    }
+}
    
-};
-
-#endif // BUILDER_H
