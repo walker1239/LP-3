@@ -1,16 +1,16 @@
 #include <iostream>
 using namespace std;
-//#include "presidente.h"
-//#include "director.h"
-//#include "manager.h"
+#include "presidente.h"
+#include "director.h"
+#include "manager.h"
 
 
 int main(){
-	//presidente *p;
-	//director *d;
-	//manager *m;
-	//producto *pro;
-	/*m.Next(&d);
+	presidente p;
+	director d;
+	manager m;
+	producto *pro;
+	m.Next(&d);
   	m.Next(&p);
 
   	int precio;
@@ -23,7 +23,6 @@ int main(){
   		pro->set_precio(precio);
     	m.Compra(pro);
     	cout << '\n';
-  	}*/
-
+  	}
 	return 0;
 }
