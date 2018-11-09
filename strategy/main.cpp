@@ -1,13 +1,15 @@
-#include <iostream>
-#include "CImg.h"
+//#include <iostream>
+//#include "CImg.h"
+#include "strategy.h"
 #include <cmath>
-using namespace std;
-using namespace cimg_library;
+//using namespace std;
+//using namespace cimg_library;
 int pos(int i, int j,int width){
   return (width*i)+j;
 }
 int main()
 {
+  /*
   CImg<int> img("walker.bmp");
   cout<<endl<<endl<<endl;
   int *r=img.data(0,0,0,0);
@@ -39,6 +41,7 @@ int main()
   {
     x[i]=(r[i]+g[i]+b[i])/3;
   }*/
+  /*
   cout<<"width"<<img.width()<<"height"<<img.height()<<endl;
   CImg<int> gris(x,img.width(),img.height(),1,1,1);
   CImg<int> dibujo(d,img.width(),img.height(),1,1,1);
@@ -46,6 +49,7 @@ int main()
     cout<<img.data()[i];
   cout<<endl<<endl<<endl;
   690 1200
-  */(img,gris,dibujo).display();
+  *//*(img,gris,dibujo).display();
   return 0;
+  */
 }

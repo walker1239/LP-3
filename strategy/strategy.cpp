@@ -1,6 +1,7 @@
 #include "strategy.h"
 
-strategy::strategy()
+/*strategy::strategy()
 {
 
 }
+*/

@@ -1,6 +1,6 @@
 #ifndef COMVOLUTION_SOBEL_H
 #define COMVOLUTION_SOBEL_H
-#include "strategy.h"
+//#include "strategy.h"
 
 class comvolution_sobel:public strategy
 {
@@ -10,6 +10,7 @@ private:
 
 public:
     comvolution_sobel();
+    ~comvolution_sobel(){}
 };
 
 #endif // COMVOLUTION_SOBEL_H

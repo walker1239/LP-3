@@ -1,6 +1,7 @@
 #include "gradiente.h"
 
-gradiente::gradiente()
+/*gradiente::gradiente()
 {
 
 }
+*/
