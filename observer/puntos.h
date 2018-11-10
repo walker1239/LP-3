@@ -1,28 +1,33 @@
 #ifndef PUNTOS_H
 #define PUNTOS_H
-#include "observer.h"
-class puntos
-{
-private:
-    vector < class observer * > grafi;
-    int x,y;
-public:
-    puntos();
 
-    void setx(int _x){
-        x=_x;
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+class puntos {
+    
+    vector < class Observer * > obser;
+    int x;
+    int y;
+  public:
+    void attach(Observer *obs) {
+        obser.push_back(obs);
     }
-    void sety(int _y){
+    void setXY(int _x, int _y) {
+        x = _x;
         y=_y;
+        notify();
     }
-    int getx(){
-        return x;
+    int getVal() {
+      return x;
     }
-
-    int sety(){
-        return y;
+    int gety(){
+      return y;
     }
-
+    void notify();
 };
+#endif 
 
-#endif // PUNTOS_H
+

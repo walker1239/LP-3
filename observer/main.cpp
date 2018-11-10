@@ -1,11 +1,24 @@
-#include "mainwindow.h"
-#include <QApplication>
+#include <iostream>
+#include <vector>
+#include "grafibarras.h"
+#include "grafipuntos.h"
+using namespace std;
 
-int main(int argc, char *argv[])
-{
-    QApplication a(argc, argv);
-    MainWindow w;
-    w.show();
+void puntos::notify() {
+  for (int i = 0; i < obser.size(); i++){
+      cout<<"size"<<obser.size()<<endl;
+      obser[i]->update();
+  }
 
-    return a.exec();
+}
+
+
+int main() {
+  puntos subj;
+  grafibarras divObs1(&subj, 4);
+  grafibarras divObs2(&subj, 3); 
+  grafipuntos modObs3(&subj, 3);
+  grafipuntos modObs4(&subj, 3);
+  //subj.setVal(14);
+  subj.setXY(14,20);
 }
