@@ -8,21 +8,28 @@ using namespace cimg_library;
 class strategy
 {
 private:
-    virtual void escala_grises() = 0;
-   
+    virtual imtype* escala_grises(){
+      imtype *r=img.data(0,0,0,0);
+      imtype *g=img.data(0,0,0,1);
+      imtype *b=img.data(0,0,0,2);
+      int ps;
+      imtype *x=new imtype[img.width()*img.height()];
+      for (int i = 0; i < img.height(); ++i)
+      {
+        for (int j = 0; j < img.width(); ++j)
+        {
+          ps=pos(i,j,img.width());
+          x[ps]=(r[ps]+g[ps]+b[ps])/3;
+        }
+      }
+    } 
+    virtual void bordes()=0;
 public:
-	CImg<int> img("walker.bmp");
-   	int *r=img.data(0,0,0,0);
-	int *g=img.data(0,0,0,1);
-	int *b=img.data(0,0,0,2);
-
-    strategy(){}
-    virtual ~strategy(){}
-    void insert_img(){
-		
+	CImg<int> img;
+    strategy(){
+        img.assign("walker.bmp");
     }
-
-
+    virtual ~strategy(){}
 };
 
 #endif // STRATEGY_H

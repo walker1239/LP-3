@@ -3,18 +3,19 @@
 #include <cmath>
 using namespace std;
 using namespace cimg_library;
+typedef double imtype;
 int pos(int i, int j,int width){
   return (width*i)+j;
 }
 int main()
 {
-  CImg<int> img("walker.bmp");
+  CImg<imtype> img("walker.bmp");
   cout<<endl<<endl<<endl;
-  int *r=img.data(0,0,0,0);
-  int *g=img.data(0,0,0,1);
-  int *b=img.data(0,0,0,2);
+  imtype *r=img.data(0,0,0,0);
+  imtype *g=img.data(0,0,0,1);
+  imtype *b=img.data(0,0,0,2);
   int ps;
-  int *x=new int[img.width()*img.height()];
+  imtype *x=new imtype[img.width()*img.height()];
   for (int i = 0; i < img.height(); ++i)
   {
     for (int j = 0; j < img.width(); ++j)
@@ -24,10 +25,10 @@ int main()
     }
   }
   cout<<"width"<<img.width()<<"height"<<img.height()<<endl;
-  int *sovel=new int[img.width()*img.height()];
-  int *sovely=new int[img.width()*img.height()];
-  int gx[9]={-1,0,1,-1,0,1,-1,0,1};
-  int gy[9]={-1,-1,-1,0,0,0,1,1,1};
+  imtype *sovel=new imtype[img.width()*img.height()];
+  imtype *sovely=new imtype[img.width()*img.height()];
+  imtype gx[9]={-1,0,1,-1,0,1,-1,0,1};
+  imtype gy[9]={-1,-1,-1,0,0,0,1,1,1};
   for (int i = 1; i < img.height()-1; i++)
   {
     for (int j = 1; j < img.width()-1; j++)
@@ -38,7 +39,7 @@ int main()
       
     }
   }
-  int *image=new int[img.width()*img.height()];
+  imtype *image=new imtype[img.width()*img.height()];
   for (int i = 0; i < img.height(); i++)
   {
     for (int j = 0; j < img.width(); j++)
@@ -50,10 +51,10 @@ int main()
   }
 
 
-  int *cannyx=new int[img.width()*img.height()];
-  int *cannyy=new int[img.width()*img.height()];
-  int cx[9]={-1,0,1,-2,0,2,-1,0,1};
-  int cy[9]={-1,-2,-1,0,0,0,1,2,1};
+  imtype *cannyx=new imtype[img.width()*img.height()];
+  imtype *cannyy=new imtype[img.width()*img.height()];
+  imtype cx[9]={-1,0,1,-2,0,2,-1,0,1};
+  imtype cy[9]={-1,-2,-1,0,0,0,1,2,1};
   for (int i = 1; i < img.height()-1; i++)
   {
     for (int j = 1; j < img.width()-1; j++)
@@ -64,7 +65,7 @@ int main()
       
     }
   }
-  int *image3=new int[img.width()*img.height()];
+  imtype *image3=new imtype[img.width()*img.height()];
   for (int i = 0; i < img.height(); i++)
   {
     for (int j = 0; j < img.width(); j++)
@@ -80,7 +81,7 @@ int main()
 
 
 
-  int *d=new int[img.width()*img.height()];
+  imtype *d=new imtype[img.width()*img.height()];
   for (int i = 1; i < img.height(); i++)
   {
     for (int j = 0; j < img.width()-1; j++)
@@ -91,18 +92,18 @@ int main()
     }
   }
 
-  /*for (int i = 0; i < img.width()*img.height(); ++i)
+  /*for (imtype i = 0; i < img.width()*img.height(); ++i)
   {
     x[i]=(r[i]+g[i]+b[i])/3;
   }*/
   cout<<"width"<<img.width()<<"height"<<img.height()<<endl;
-  CImg<int> gris(x,img.width(),img.height(),1,1,1);
-  CImg<int> dibujo(d,img.width(),img.height(),1,1,1);
-  CImg<int> so(sovel,img.width(),img.height(),1,1,1);
-  CImg<int> so1(sovely,img.width(),img.height(),1,1,1);
-  CImg<int> isar(image,img.width(),img.height(),1,1,1);
-  CImg<int> isr(image3,img.width(),img.height(),1,1,1);
-  /*for (int i = 0; i < 100; ++i)
+  CImg<imtype> gris(x,img.width(),img.height(),1,1,1);
+  CImg<imtype> dibujo(d,img.width(),img.height(),1,1,1);
+  CImg<imtype> so(sovel,img.width(),img.height(),1,1,1);
+  CImg<imtype> so1(sovely,img.width(),img.height(),1,1,1);
+  CImg<imtype> isar(image,img.width(),img.height(),1,1,1);
+  CImg<imtype> isr(image3,img.width(),img.height(),1,1,1);
+  /*for (imtype i = 0; i < 100; ++i)
     cout<<img.data()[i];
   cout<<endl<<endl<<endl;
   690 1200
