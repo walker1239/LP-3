@@ -6,13 +6,18 @@ using namespace std;
 
 class grafibarras: public Observer {
   public:
-    grafibarras(puntos *mod, int div): Observer(mod, div){}
-    void update() {
-       
+    grafibarras(tabla* tab): Observer(tab){}
+    void update(){
 
-        int v = getSubject()->getVal(), d = getSubject()->gety();
-        cout<<"DIBUJO BARRAS"<<endl;
-        cout << " x " << v << " y:  " << d << '\n';
+       vector<puntos> x = (tab->getpoints());
+       cout<<"DIBUJO BARRAS"<<endl;
+       
+       cout<<endl<<endl<<endl;
+       for (int i = 0; i < x.size(); ++i)
+       {
+       	cout << " x " <<x[i].getx() << " y:  " << x[i].gety() << '\n';
+       }
+       cout<<endl<<endl<<endl;
     }
 };
 

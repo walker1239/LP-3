@@ -1,11 +1,11 @@
 #ifndef GRAFIPUNTOS_H
 #define GRAFIPUNTOS_H
-#include "observer.h"
+//#include "observer.h"
 using namespace std;
 
 class grafipuntos: public Observer {
   public:
-    grafipuntos(puntos *mod, int div): Observer(mod, div){}
+    grafipuntos(tabla *mod, int div): Observer(mod, div){}
     void update() {
 
         int v = getSubject()->getVal(), d = getSubject()->gety();

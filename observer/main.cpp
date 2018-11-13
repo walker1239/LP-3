@@ -1,10 +1,10 @@
 #include <iostream>
 #include <vector>
 #include "grafibarras.h"
-#include "grafipuntos.h"
+//#include "grafipuntos.h"
 using namespace std;
 
-void puntos::notify() {
+void tabla::notify() {
   for (int i = 0; i < obser.size(); i++){
       cout<<"size"<<obser.size()<<endl;
       obser[i]->update();
@@ -14,11 +14,17 @@ void puntos::notify() {
 
 
 int main() {
-  puntos subj;
-  grafibarras divObs1(&subj, 4);
-  grafibarras divObs2(&subj, 3); 
-  grafipuntos modObs3(&subj, 3);
-  grafipuntos modObs4(&subj, 3);
-  //subj.setVal(14);
-  subj.setXY(14,20);
+
+
+  tabla subj(15,6);
+  grafibarras *grab;
+  grab=new grafibarras(&subj);
+  subj.attach(grab);
+ //grafibarras grab2(subj);
+  subj.addpoint(17,20);
+  subj.addpoint(15,20);
+  subj.addpoint(35,20);
+  subj.addpoint(45,20);
+  subj.setXY(16,24,1);
+
 }
