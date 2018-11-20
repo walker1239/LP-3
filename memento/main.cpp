@@ -8,13 +8,15 @@ int main(){
     Foto->dibujar();
 
     caretaker* care = new caretaker();
-    care->setmemento(Foto->creatememento());
+   // care->setmemento(Foto->creatememento());
 
-   	Foto->setstate(2);
-  	Foto->dibujar();
+   	//Foto->setstate(2);
+  	//Foto->dibujar();
  	
-    Foto->setmemento(care->getmemento());
-    Foto->dibujar();
+    //Foto->setmemento(care->getmemento());
+    //Foto->dibujar();
+
+
 
   return 0;
 }

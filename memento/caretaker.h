@@ -1,7 +1,8 @@
 #ifndef _CARETAKER_H_
 #define _CARETAKER_H_
-
+#include <vector>
 #include "memento.h"
+#include "linked_list.h"
 using namespace std;
 
  class caretaker
@@ -10,13 +11,26 @@ using namespace std;
      caretaker(){}
      ~caretaker(){}
      void setmemento(memento* Memento){
-          memento = Memento;
+     	list.insert_front(memento);
+
+     	//mementolist[mementos]->setmemento(fotito->creatememento());
+    
      }
-     memento* getmemento(){
-          return memento;
-     }
+    memento* getmemento(){
+       	//return _memento;
+    }
+
+
+
+
+
  private:
-     memento* memento;
+ 	linked_list<memento*> list;
+ 	int mementos=20;
+    int act;
+    caretaker* mementolist;
+   	foto* fotito; 
+
  };
  
  #endif
