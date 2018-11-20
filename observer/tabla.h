@@ -20,6 +20,14 @@ class tabla {
         punt[i].setXYp(_x,_y);
         notify();
     }
+    void setX(int _x,int i) {
+        punt[i].setXp(_x);
+        notify();
+    }
+    void setY(int _y,int i) {
+        punt[i].setYp(_y);
+        notify();
+    }
     void addpoint(int _x,int _y) {
         puntos a(_x,_y);
         punt.push_back(a);

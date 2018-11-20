@@ -21,11 +21,17 @@ public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
 
+private slots:
+    void on_tableWidget_cellChanged(int row, int column);
+
 private:
     Ui::MainWindow *ui;
     QPainter *q;
     QPixmap *pixmap;
     QPen *lapiz;
+    QColor color;
+    tabla subj;
+    grafibarras *grab;
 };
 
 #endif // MAINWINDOW_H

@@ -17,6 +17,12 @@ class puntos {
         y=_y;
     
     }
+    void setXp(int _x) {
+        x = _x;
+    }
+    void setYp(int _y) {
+        y=_y;
+    }
     int getx() {
       return x;
     }

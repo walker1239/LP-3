@@ -25,6 +25,7 @@ HEADERS  += mainwindow.h \
     grafipuntos.h \
     grafibarras.h \
     grafilineas.h \
-    observer.h
+    observer.h \
+    tabla.h
 
 FORMS    += mainwindow.ui
