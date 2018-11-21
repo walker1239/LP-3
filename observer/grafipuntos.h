@@ -21,7 +21,7 @@ class grafipuntos: public Observer {
     void drawMe(QPainter *DrawHere){
         vector<puntos> x = (tab->getpoints());
         for (int i = 0; i < x.size(); ++i)
-            DrawHere->drawRect(x[i].getx(),x[i].gety(),2,x[i].gety());
+            DrawHere->drawEllipse(x[i].getx()+20+297,346-x[i].gety(),4,4);
     }
 };
 

@@ -20,8 +20,8 @@ public:
     }
     void drawMe(QPainter *DrawHere){
         vector<puntos> x = (tab->getpoints());
-        for (int i = 0; i < x.size(); ++i)
-            DrawHere->drawRect(x[i].getx(),x[i].gety(),2,x[i].gety());
+        for (int i = 0; i < x.size()-1; ++i)
+            DrawHere->drawLine(x[i].getx()+20+557,350-x[i].gety(),x[i+1].getx()+20+557,350-x[i+1].gety());
     }
 };
 

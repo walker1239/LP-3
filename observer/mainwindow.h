@@ -32,6 +32,8 @@ private:
     QColor color;
     tabla subj;
     grafibarras *grab;
+    grafipuntos *grap;
+    grafilineas *gral;
 };
 
 #endif // MAINWINDOW_H

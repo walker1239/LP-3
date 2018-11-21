@@ -8,7 +8,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
 
 
-    pixmap=new QPixmap(631,371);
+    pixmap=new QPixmap(822,371);
     pixmap->fill();
     //circulo=new QPixmap(400,300);
     //circulo->fill();
@@ -35,6 +35,8 @@ MainWindow::MainWindow(QWidget *parent) :
 
 
     grab=new grafibarras(&subj);
+    grap=new grafipuntos(&subj);
+    gral=new grafilineas(&subj);
     subj.attach(grab);
     /*subj.addpoint(17,20);
     subj.addpoint(50,20);
@@ -61,6 +63,8 @@ MainWindow::MainWindow(QWidget *parent) :
         cout<<"x"<<x<<"y"<<y<<endl;
     }
     grab->drawMe(q);
+    grap->drawMe(q);
+    gral->drawMe(q);
     ui->l_area->setPixmap(*pixmap);
 }
 void tabla::notify() {
@@ -92,5 +96,7 @@ void MainWindow::on_tableWidget_cellChanged(int row, int column)
     x=std::atoi( text.c_str() );
     subj.setXY(x,y,row+1);
     grab->drawMe(q);
+    grap->drawMe(q);
+    gral->drawMe(q);
     ui->l_area->setPixmap(*pixmap);
 }
