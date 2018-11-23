@@ -30,6 +30,7 @@ class linked_list
 	private:
 		node<T> * p_head;
 		node<T> * p_last;
+		int count;
 
 	public:
 		linked_list();
@@ -42,6 +43,28 @@ class linked_list
 		void reverse();
 		T getFirstDato();
 		T getLastDato();
+		T Back(){
+			if(!p_head )
+	    {
+	        throw std::out_of_range("Can't return value from empty list");
+	    }
+	    return p_last->dato;
+		}
+
+
+
+
+		int _size(node<T> *n){
+			while (n != NULL) { 
+		  		++count; 
+		  		n = n->p_next;
+			}
+		}
+		int size(){
+			_size(p_head);
+			return count;
+		}
+
 		void print();
 
 		class iterator

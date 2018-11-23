@@ -21,7 +21,9 @@ class foto
           return new memento(state); 
      }
      void setstate(int _state){
+
           state=_state;
+          
      }
      int getstate(){
           return state;

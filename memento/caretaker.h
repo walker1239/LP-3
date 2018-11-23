@@ -11,25 +11,34 @@ using namespace std;
      caretaker(){}
      ~caretaker(){}
      void setmemento(memento* Memento){
-     	list.insert_front(memento);
-
-     	//mementolist[mementos]->setmemento(fotito->creatememento());
-    
+     	list.insert_back(Memento);
      }
-    memento* getmemento(){
-       	//return _memento;
-    }
 
+    void setmemento_next(memento* Memento){
+        next_list.insert_front(Memento);
+     }
+
+
+    memento* getmemento(){
+        last_listmementos=list.Back();
+        list.remove_front();
+        return last_listmementos;
+    }
+    memento* redo(){
+        next_listmementos=next_list.Back();
+        next_list.remove_front();
+        return next_listmementos;
+    }
 
 
 
 
  private:
  	linked_list<memento*> list;
- 	int mementos=20;
-    int act;
-    caretaker* mementolist;
-   	foto* fotito; 
+    linked_list<memento*> next_list;
+
+    memento *last_listmementos;
+    memento *next_listmementos;
 
  };
  
