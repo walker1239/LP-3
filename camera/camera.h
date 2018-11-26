@@ -1,22 +1,12 @@
 /****************************************************************************
 **
-** Copyright (C) 2017 The Qt Company Ltd.
-** Contact: https://www.qt.io/licensing/
+** Copyright (C) 2015 The Qt Company Ltd.
+** Contact: http://www.qt.io/licensing/
 **
 ** This file is part of the examples of the Qt Toolkit.
 **
 ** $QT_BEGIN_LICENSE:BSD$
-** Commercial License Usage
-** Licensees holding valid commercial Qt licenses may use this file in
-** accordance with the commercial license agreement provided with the
-** Software or, alternatively, in accordance with the terms contained in
-** a written agreement between you and The Qt Company. For licensing terms
-** and conditions see https://www.qt.io/terms-conditions. For further
-** information use the contact form at https://www.qt.io/contact-us.
-**
-** BSD License Usage
-** Alternatively, you may use this file under the terms of the BSD license
-** as follows:
+** You may use this file under the terms of the BSD license as follows:
 **
 ** "Redistribution and use in source and binary forms, with or without
 ** modification, are permitted provided that the following conditions are
@@ -54,7 +44,6 @@
 #include <QCamera>
 #include <QCameraImageCapture>
 #include <QMediaRecorder>
-#include <QScopedPointer>
 
 #include <QMainWindow>
 
@@ -67,7 +56,8 @@ class Camera : public QMainWindow
     Q_OBJECT
 
 public:
-    Camera();
+    Camera(QWidget *parent = 0);
+    ~Camera();
 
 private slots:
     void setCamera(const QCameraInfo &cameraInfo);
@@ -110,23 +100,23 @@ private slots:
     void imageSaved(int id, const QString &fileName);
 
 protected:
-    void keyPressEvent(QKeyEvent *event) override;
-    void keyReleaseEvent(QKeyEvent *event) override;
-    void closeEvent(QCloseEvent *event) override;
+    void keyPressEvent(QKeyEvent *event);
+    void keyReleaseEvent(QKeyEvent *event);
+    void closeEvent(QCloseEvent *event);
 
 private:
     Ui::Camera *ui;
 
-    QScopedPointer<QCamera> m_camera;
-    QScopedPointer<QCameraImageCapture> m_imageCapture;
-    QScopedPointer<QMediaRecorder> m_mediaRecorder;
+    QCamera *camera;
+    QCameraImageCapture *imageCapture;
+    QMediaRecorder* mediaRecorder;
 
-    QImageEncoderSettings m_imageSettings;
-    QAudioEncoderSettings m_audioSettings;
-    QVideoEncoderSettings m_videoSettings;
-    QString m_videoContainerFormat;
-    bool m_isCapturingImage = false;
-    bool m_applicationExiting = false;
+    QImageEncoderSettings imageSettings;
+    QAudioEncoderSettings audioSettings;
+    QVideoEncoderSettings videoSettings;
+    QString videoContainerFormat;
+    bool isCapturingImage;
+    bool applicationExiting;
 };
 
 #endif
