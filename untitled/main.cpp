@@ -8,7 +8,7 @@ using namespace std;
 int main()
 {
     foto* Foto = new foto(1);
-    caretaker* care = new caretaker();
+    caretaker* care = new caretaker(4);
 
     //  care->setmemento(Foto->creatememento());
 
@@ -44,7 +44,18 @@ int main()
 
       m= care->previous();
       cout<<m->getstate()<<endl;
-
+      m= care->previous();
+      cout<<m->getstate()<<endl;
+      m= care->previous();
+      cout<<m->getstate()<<endl;
+      m= care->previous();
+      cout<<m->getstate()<<endl;
+      Foto->setstate(10);
+      Foto->dibujar();
+      //foto next
+      care->addmemento(Foto->creatememento());
+      m= care->previous();
+      cout<<m->getstate()<<endl;
   return 0;
 }
 

@@ -11,8 +11,15 @@ using namespace std;
      caretaker(int _n){index=-1;n=_n;}
      ~caretaker(){}
      void addmemento(memento* Memento){
-        list.push_back(Memento);
-        index++;
+        if(n!=list.size()){
+            list.push_back(Memento);
+            index=list.size()-1;
+            return;
+        }
+        refresh();
+        list[n-1]=Memento;
+        index=n-1;
+
      }
      memento* next(){
          if(index==list.size()-1)
