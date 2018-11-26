@@ -2,7 +2,7 @@
 #define _CARETAKER_H_
 #include <vector>
 #include "memento.h"
-#include "linked_list.h"
+#include "linkeddoble.cpp"
 using namespace std;
 
  class caretaker
@@ -11,34 +11,43 @@ using namespace std;
      caretaker(){}
      ~caretaker(){}
      void setmemento(memento* Memento){
-     	list.insert_back(Memento);
-     }
+          
+        if(this->list.size()>=5){
+            list.remove_back();
 
-    void setmemento_next(memento* Memento){
-        next_list.insert_front(Memento);
-     }
+        }
+        list.insert_front(Memento); 
 
+    
+     }
 
     memento* getmemento(){
-        last_listmementos=list.Back();
-        list.remove_front();
+
+        last_listmementos=list.Begin();
         return last_listmementos;
     }
-    memento* redo(){
-        next_listmementos=next_list.Back();
-        next_list.remove_front();
-        return next_listmementos;
+
+    memento* retrosede(){
+        cout<<"retrosede"<<endl;
+        last_listmementos=list.retroceder();
+        return last_listmementos;
     }
 
 
+    memento*  avanzar(){
+        cout<<"avanzar"<<endl;
+        last_listmementos=list.avanzar();
+        return last_listmementos;   
+    }
 
 
+        double_linked_list<memento*> list;
  private:
- 	linked_list<memento*> list;
-    linked_list<memento*> next_list;
+ 	//double_linked_list<memento*> list;
+        
 
     memento *last_listmementos;
-    memento *next_listmementos;
+
 
  };
  

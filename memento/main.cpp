@@ -6,27 +6,76 @@ using namespace std;
 int main(){
 	foto* Foto = new foto(1);
 	caretaker* care = new caretaker();
+    Foto->setstate(1);
     Foto->dibujar();
     
-  //  care->setmemento(Foto->creatememento());
+    care->setmemento(Foto->creatememento());
 
    	Foto->setstate(2);
   	Foto->dibujar();
-    //foto del anterior
+    
  	  care->setmemento(Foto->creatememento());
 
   	Foto->setstate(3);
   	Foto->dibujar();
-    //foto next
-    care->setmemento_next(Foto->creatememento());
+    care->setmemento(Foto->creatememento());
+
+    Foto->setstate(4);
+    Foto->dibujar();
+    care->setmemento(Foto->creatememento());
+
+    Foto->setstate(5);
+    Foto->dibujar();
+    care->setmemento(Foto->creatememento());
+
+    Foto->setstate(6);
+    Foto->dibujar();
+    care->setmemento(Foto->creatememento());
+
+
     //dibuja anterior
-    Foto->setmemento(care->getmemento());
-
+        //care->avanza();
+   // Foto->setmemento(care->getmemento());
+    Foto->setmemento(care->retrosede());
     Foto->dibujar();
-    //dibuja el siguiente
-    Foto->setmemento(care->redo());
 
+    Foto->setmemento(care->retrosede());
     Foto->dibujar();
+
+
+    Foto->setmemento(care->retrosede());
+    Foto->dibujar();
+
+    Foto->setmemento(care->retrosede());
+    Foto->dibujar();
+
+    Foto->setmemento(care->retrosede());
+    Foto->dibujar();
+
+
+    Foto->setmemento(care->avanzar());
+    Foto->dibujar();
+
+    Foto->setmemento(care->avanzar());
+    Foto->dibujar();
+
+    Foto->setmemento(care->avanzar());
+    Foto->dibujar();
+
+    Foto->setmemento(care->avanzar());
+    Foto->dibujar();
+
+    Foto->setmemento(care->avanzar());
+    Foto->dibujar();
+
+
+
+
+
+
+  
+
+    
 
 
 
