@@ -30,6 +30,7 @@ class linked_list
 	private:
 		node<T> * p_head;
 		node<T> * p_last;
+		node<T> * actual;
 		int count;
 
 	public:
@@ -64,6 +65,35 @@ class linked_list
 			_size(p_head);
 			return count;
 		}
+
+		T Begin()
+		{
+			return p_head->dato;
+		}
+
+		T avanazar()
+		{	
+			node<T> *aux;
+			node<T> *tmp;
+			aux=p_head->p_next;
+			actual=p_head->p_next;
+			tmp=p_head;
+
+			return tmp->dato=aux->dato;
+		}
+
+
+		T retoceder(){
+			node<T> *tmp= p_head;
+			node<T> *tmp2;
+			while(tmp->p_next!=actual){
+				tmp2=tmp;
+				tmp=tmp->p_next;
+			}
+			tmp2->p_next=NULL;
+			delete tmp;
+		}
+
 
 		void print();
 
